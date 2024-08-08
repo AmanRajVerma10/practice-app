@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{color:'GrayText',alignContent:'center'}}>
       <h1>This is a practice arena!</h1>
       <input
         placeholder="Enter Task"
