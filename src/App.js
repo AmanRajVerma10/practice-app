@@ -11,12 +11,20 @@ function App() {
     setTask("");
   };
 
-  function deleteHandler(i){
+  function deleteHandler(i) {
     console.log(i);
   }
 
   return (
-    <div>
+    <div  style={{
+      color: "GrayText",
+      textAlign: "center",
+      backgroundColor: "aqua",
+      width: "300px",        // Set the width of the box
+      margin: "10px auto",  // Center the box horizontally and add some space from the top
+      padding: "20px",       // Add padding inside the box
+      borderRadius: "8px"    // Optional: Add rounded corners
+    }}>
       <h1>This is a practice arena!</h1>
       <input
         placeholder="Enter Task"
@@ -27,7 +35,9 @@ function App() {
       <button onClick={submitHandler}>Add Task</button>
       <ul>
         {tasks.map((t, i) => (
-          <li key={i}>{t} <button onClick={deleteHandler.bind(null,i)}>Delete</button></li>
+          <li key={i}>
+            {t} <button onClick={deleteHandler.bind(null, i)}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>
