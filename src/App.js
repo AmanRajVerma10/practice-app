@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Counter from "./components/Counter";
 import CounterInterview from "./components/CounterInterview";
 import Task3 from "./components/Task3";
+import HomePage from "./pages/HomePage";
+import Layout from "./components/Layout";
 
 function App() {
   const [task, setTask] = useState("");
@@ -26,7 +29,7 @@ function App() {
 
   return (
     <>
-      <div
+      {/* <div
         style={{
           color: "GrayText",
           textAlign: "center",
@@ -52,10 +55,28 @@ function App() {
             </li>
           ))}
         </ul>
-      </div>
-      <Counter value={counter} increaseFunction={increaseHandler}></Counter>
-      <CounterInterview />
-      <Task3/>
+      </div> */}
+      <Router>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/task1">
+              <CounterInterview />
+            </Route>
+            <Route exact path="/task3">
+              <Task3 />
+            </Route>
+            <Route exact path="/task2">
+              <Counter
+                value={counter}
+                increaseFunction={increaseHandler}
+              ></Counter>
+            </Route>
+          </Switch>
+        </Layout>
+      </Router>
     </>
   );
 }
