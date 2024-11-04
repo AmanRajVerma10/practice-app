@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Counter from "./components/Counter";
 import CounterInterview from "./components/CounterInterview";
+import Task3 from "./components/Task3";
 
 function App() {
   const [task, setTask] = useState("");
@@ -54,6 +55,7 @@ function App() {
       </div>
       <Counter value={counter} increaseFunction={increaseHandler}></Counter>
       <CounterInterview />
+      <Task3/>
     </>
   );
 }
